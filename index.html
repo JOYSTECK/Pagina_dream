@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mates</title>
+  <link rel="icon" href="images/icono.jpg">
+  <link rel="stylesheet" href="style.css">
+  <style type="text/css">
+    .card {
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(173, 252, 1, 0.97);
+      box-sizing: border-box;
+      width: 250px;
+      font-family: dot;
+    }
+
+    .card-text {
+      padding: 1px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .card>img {
+      max-width: 100%; 
+      height: auto;
+    }
+
+      .p1 {
+         text-shadow: 5px 5px 3px rgb(4, 255, 0);
+      }
+      .p2 {
+         opacity: 80;
+         color: #090a0a;
+         background-color: #d9dc46;
+         padding: 20px;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="menu-desplegable">
+    <button class="boton-menu" onclick="toggleMenu()">☰</button>
+    <ul class="opciones-menu">
+      <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="mostrarSeccion('tablas')">Tablas</a></li>
+      <li><a href="#" onclick="mostrarSeccion('calculadora')">Calculadora</a></li>
+      <li><a href="#" onclick="mostrarSeccion('conversor')">Conversor</a></li>
+      <li><a href="#" onclick="mostrarSeccion('cronometro')">Cronometro</a></li>
+      <li><a href="#" onclick="mostrarSeccion('temporizador')">Temporizador</a></li>
+      <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+    </ul>
+  </div>
+
+
+  <section id="inicio-seccion" style="display: block;">
+    <header>
+      <h1 class="titulo">Inicio</h1>
+    </header>
+    <div id="informacion">
+      <div class="campo-tabla">
+        <h2 class="p1">Bienvenid@!</h2>
+        <p >¡Hola y bienvenid@ a nuestra página web! Somos JOYSTECK una empresa de software creada en el 2022 con el afan de cubrir varias necesidades <br>Estamos especialidados en ofrecerte:
+          <h2 class="p1">¡Comencemos!</h2></p>
+          <ol type="A">
+          <li>Diseño de aplicaciones moviles</li>
+          <br>
+          <li>Creacion de sistemas</li>
+          <br>
+          <li>Creacion de paginas web</li>
+          <br>
+          <li> Programas en lenguaje C, JAVA,HTML y PHP</li>
+        </ol>
+        </p>
+        <h2>Agunos de nuestros trabajos son los siguientes:</h2>
+        <div class="card">
+          <img src="images/AD_2.jpg">
+          <div class="card-text">
+            <a href="SISTEMA.xlsm">Sistema ADFINCONT "Administrando tu futuro"</a>
+
+          </div>
+        </div>
+<br>
+        <br>
+        Y como tambien queremos ayudarte aquí encontrarás una variedad de herramientas y recursos útiles para
+        ayudarte en tus tareas cotidianas.
+        <br><br>
+        <a href="#" onclick="mostrarSeccion('tablas')" class="p2">Podras practicar las tablas de multiplicar</a>
+        <br>
+        <img src="images/tabla-multiplicar.jpg">
+
+        <a href="#" onclick="mostrarSeccion('calculadora')" class="p2">Realizar cálculos rápidos con nuestra calculadora</a>
+        <br>
+        <img src="images/calculadora.png">
+        <br>
+        <a href="#" onclick="mostrarSeccion('conversor')" class="p2"> Convertir unidades de medida con nuestro conversor</a>
+        <br>
+        <img src="images/conversor.png">
+        <a href="#" onclick="mostrarSeccion('cronometro')" class="p2">Medir el tiempo con nuestro temporizador y cronómetro</a>
+        <br>
+        <img src="images/cronometro.png">
+        <br>
+        Esperamos que encuentres todo lo que necesitas y que disfrutes
+        explorando nuestra página. <br>
+        <img src="images/EQUIPO .jpg" alt="Inicio">
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-seccion">
+    <header>
+      <h1 class="titulo">Tablas de multiplicar</h1>
+    </header>
+    <main>
+      <div class="campo-tabla">
+        <label for="tabla"><br>Ingrese la tabla de multiplicar <br>que desea ver:</label>
+        <input type="number" id="tabla" name="tabla" min="1" max="10">
+        <button type="button" onclick="mostrarTabla()">Generar</button>
+      </div>
+      <div id="tabla-error"></div>
+      <div id="tabla-carga"></div>
+      <div id="tabla-resultado"></div><br>
+    </main>
+
+    <div id="informacion">
+      <h2>¿Qué son las tablas de multiplicar?</h2>
+      <p>Las tablas de multiplicar son una herramienta matemática fundamental que permite a los estudiantes aprender y
+        memorizar las operaciones de multiplicación.</p>
+      <img src="images/tabla-multiplicar.jpg" alt="Ejemplo de tabla de multiplicar">
+    </div>
+  </section>
+
+  <section id="calculadora-seccion">
+    <header>
+      <h1 class="titulo">Calculadora básica</h1>
+    </header>
+    <main>
+      <br><label for="num1">Número 1:</label>
+      <input type="number" id="num1" name="num1">
+      <label for="num2">Número 2:</label>
+      <input type="number" id="num2" name="num2">
+
+      <div class="botones">
+        <div class="grupo1">
+          <button type="button" onclick="sumar()">Sumar</button>
+          <button type="button" onclick="restar()">Restar</button>
+        </div>
+        <div class="grupo2">
+          <button type="button" onclick="multiplicar()">Multiplicar</button>
+          <button type="button" onclick="dividir()">Dividir</button>
+        </div>
+      </div>
+
+      <div id="resultado"></div><br>
+    </main>
+
+    <div id="informacion">
+      <h2>¿Qué es una calculadora?</h2>
+      <p>Una calculadora es una herramienta matemática que permite hacer operaciones numéricas de manera rápida y
+        precisa. Las calculadoras se utilizan para realizar operaciones como sumas y restas.</p>
+      <img src="images/calculadora.png" alt="Ejemplo de calculadora">
+  </section>
+
+  <section id="conversor-seccion">
+    <header>
+      <h1 class="titulo">Conversor de unidades</h1>
+    </header>
+    <main>
+      <div>
+        <label><br>Unidad de origen:</label>
+        <select id="unidad-origen">
+          <option value="metros">Metros</option>
+          <option value="kilometros">Kilómetros</option>
+          <option value="pies">Pies</option>
+          <option value="millas">Millas</option>
+        </select>
+      </div>
+      <div>
+        <label><br>Unidad de destino:</label>
+        <select id="unidad-destino">
+          <option value="metros">Metros</option>
+          <option value="kilometros">Kilómetros</option>
+          <option value="pies">Pies</option>
+          <option value="millas">Millas</option>
+        </select>
+      </div>
+      <div>
+        <div class="campo-tabla">
+          <label><br>Valor:</label>
+          <input type="number" id="valor">
+        </div>
+      </div>
+      <div>
+        <button onclick="convertir()">Convertir</button>
+      </div>
+      <div id="conversor-error"></div>
+      <div id="conversor-resultado"></div><br>
+    </main>
+
+    <div id="informacion">
+      <h2>¿Qué es un conversor?</h2>
+      <p>Un conversor es una herramienta que permite convertir una cantidad de una unidad de medida a otra unidad de
+        medida. Los conversores se utilizan para convertir medidas de longitud, peso, tiempo y otras unidades de medida.
+      </p>
+      <img src="images/conversor.png" alt="Ejemplo de conversor">
+
+  </section>
+
+  <section id="cronometro-seccion">
+    <header>
+      <h1 class="titulo">Cronómetro</h1>
+    </header>
+    <main>
+      <div id="cronometro">
+        <div id="tiempo-transcurrido">00:00:00</div><br>
+        <button id="boton-inicio" onclick="iniciarCronometro()">Iniciar</button>
+        <button id="boton-detener" onclick="detenerCronometro()">Detener</button><br>
+        <button id="boton-reinicio" onclick="reiniciarCronometro()">Reiniciar</button>
+      </div>
+    </main>
+    <div id="informacion">
+      <h2>¿Qué es un cronómetro?</h2>
+      <p>Un cronómetro es un dispositivo que se utiliza para medir el tiempo transcurrido entre dos eventos. Los
+        cronómetros se utilizan en deportes, en experimentos científicos y en otras situaciones en las que es importante
+        medir con precisión el tiempo.</p>
+      <img src="images/cronometro.png" alt="Ejemplo de cronómetro">
+    </div>
+  </section>
+
+  <section id="temporizador-seccion">
+    <header class="header1">
+      <h1 class="titulo1">Temporizador</h1>
+    </header>
+    <main>
+      <div id="temporizador">
+        <label for="temporizador-input"><br>Ingrese los segundos para el temporizador:</label>
+        <input type="number" id="temporizador-input" name="temporizador-input" min="1" max="3600">
+        <button type="button" onclick="iniciarTemporizador()">Iniciar</button>
+        <button type="button" onclick="detenerTemporizador()">Detener</button>
+      </div>
+      <div id="temporizador-resultado"></div><br>
+    </main>
+    <div id="informacion">
+      <h2>¿Qué es un temporizador?</h2>
+      <p>Un temporizador es una herramienta que permite medir el tiempo transcurrido y programar una cuenta regresiva
+        para una tarea en particular. Los temporizadores se usan para medir el tiempo de cocción de un plato en el
+        horno, para programar una tarea específica en una computadora, para controlar la duración de una presentación,
+        entre otras aplicaciones.</p>
+      <img src="images/temporizador.png" alt="Ejemplo de temporizador">
+    </div>
+  </section>
+
+  <section id="contacto-seccion">
+    <header>
+      <h1 class="titulo">Contacto</h1>
+    </header>
+    <main>
+      <div class="campo-tabla">
+        <form action="enviar.php" method="post" >
+        <br><label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <br><button type="submit" >Enviar</button>
+       </form>
+      </div>
+    </main>
+    <div id="informacion">
+      <h2>Creador:</h2>
+      <p>Gracias por querer contactarte conmigo, estaré al pendiente de tus dudas, sugerencias, comentarios o bugs
+        relacionados con nuestra página web, ¡saludos!</p>
+      <img src="images/saludos.jpeg" alt="Saludos">
+    </div>
+  </section>
+
+
+  <footer>
+    <p>Codificado por JOYSTECK</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
